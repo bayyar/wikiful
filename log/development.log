@@ -745,3 +745,5 @@ DEPRECATION WARNING: Relation#first with finder options is deprecated. Please bu
   [1m[35mSQL (0.4ms)[0m  INSERT INTO "article_categories" ("article_id", "category_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["article_id", 51], ["category_id", 3], ["created_at", Fri, 20 Dec 2013 20:05:09 UTC +00:00], ["updated_at", Fri, 20 Dec 2013 20:05:09 UTC +00:00]]
   [1m[36m (0.5ms)[0m  [1mCOMMIT[0m
   [1m[36m (0.6ms)[0m  [1mSELECT COUNT(*) FROM "articles"[0m
+  [1m[36m (5.7ms)[0m  [1mSELECT COUNT(*) FROM "articles"[0m
+  [1m[35mArticle Load (7.1ms)[0m  SELECT "articles".* FROM "articles" ORDER BY "articles"."id" ASC LIMIT 1
