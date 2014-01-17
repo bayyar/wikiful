@@ -1,4 +1,22 @@
 <h1>Welcome to Wikiful</h1>
 
 <h2>Here are some recent articles</h2>
-<p>This is eventually going to be the landing page for this site.</p>
+
+<table>
+<tr>
+	<th>Title</th>
+	<th>Publication Date</th>
+	<th>Posted Under</th>
+	<th>Preview</th>
+</tr>
+<tr>
+<% @recentart.each do |recentart| %>
+	<td><%= link_to recentart.title.truncate(50), recentart %></td>
+	<td><%= recentart.created_at.strftime('%b %d, %Y') %></td>
+	<td><% recentart.categories.each do |category| %>
+		<%= link_to category.category_name, category %>
+		<% end %></td>
+	<td><%= recentart.content.truncate(60) %></td>
+</tr>
+<% end %>
+</table>
