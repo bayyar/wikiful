@@ -1,0 +1,6 @@
+<h1>Categories on Wikiful</h1>
+<% @categories.each do |category| %>
+	<div>
+		<h3><%= link_to category.category_name, category %></h3>
+	</div>
+<% end %>
