@@ -1,8 +1,8 @@
 <div>
-	<h1><%= @article.title %><h1>
+	<h1><%= @article.title %></h1>
 		<p>Published <%= @article.created_at.strftime('%b %d, %Y') %></p>
-		<p>Filed under: <% @article.categories each do |category| %>
-			<%= category.name %>$nbsp;
+		<p>Filed under: <% @article.categories.each do |category| %>
+			<%= category.category_name %>&nbsp;
 		<% end %>
 	<div><%= @article.content %></div>
 </div>
