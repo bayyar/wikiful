@@ -11,12 +11,12 @@
 </tr>
 <tr>
 <% @recentart.each do |recentart| %>
-	<td><%= link_to recentart.title.truncate(50), recentart %></td>
+	<td><%= link_to recentart.title.truncate(40), recentart %></td>
 	<td><%= recentart.created_at.strftime('%b %d, %Y') %></td>
 	<td><% recentart.categories.each do |category| %>
 		<%= link_to category.category_name, category %>
 		<% end %></td>
-	<td><%= recentart.content.truncate(60) %></td>
+	<td><%= recentart.content.truncate(50) %></td>
 </tr>
 <% end %>
 </table>

@@ -4059,3 +4059,176 @@ Started GET "/assets/welcome.js?body=1" for 127.0.0.1 at 2014-01-20 11:57:35 -05
 
 
 Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-01-20 11:57:35 -0500
+
+
+Started GET "/" for 127.0.0.1 at 2014-01-20 12:02:51 -0500
+Processing by WelcomeController#index as HTML
+  [1m[35mArticle Load (1.5ms)[0m  SELECT "articles".* FROM "articles" ORDER BY "articles"."updated_at" DESC LIMIT 5
+  [1m[36mCategory Load (0.5ms)[0m  [1mSELECT "categories".* FROM "categories" INNER JOIN "article_categories" ON "categories"."id" = "article_categories"."category_id" WHERE "article_categories"."article_id" = $1[0m  [["article_id", 51]]
+  [1m[35mCategory Load (0.5ms)[0m  SELECT "categories".* FROM "categories" INNER JOIN "article_categories" ON "categories"."id" = "article_categories"."category_id" WHERE "article_categories"."article_id" = $1  [["article_id", 50]]
+  [1m[36mCategory Load (0.4ms)[0m  [1mSELECT "categories".* FROM "categories" INNER JOIN "article_categories" ON "categories"."id" = "article_categories"."category_id" WHERE "article_categories"."article_id" = $1[0m  [["article_id", 49]]
+  [1m[35mCategory Load (0.4ms)[0m  SELECT "categories".* FROM "categories" INNER JOIN "article_categories" ON "categories"."id" = "article_categories"."category_id" WHERE "article_categories"."article_id" = $1  [["article_id", 48]]
+  [1m[36mCategory Load (0.4ms)[0m  [1mSELECT "categories".* FROM "categories" INNER JOIN "article_categories" ON "categories"."id" = "article_categories"."category_id" WHERE "article_categories"."article_id" = $1[0m  [["article_id", 47]]
+  Rendered welcome/index.html.erb within layouts/application (13.9ms)
+  [1m[35mCategory Load (0.7ms)[0m  SELECT "categories".* FROM "categories" ORDER BY "categories"."category_name" ASC
+Completed 200 OK in 29ms (Views: 22.9ms | ActiveRecord: 4.4ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-01-20 12:02:52 -0500
+
+
+Started GET "/assets/welcome.css?body=1" for 127.0.0.1 at 2014-01-20 12:02:52 -0500
+
+
+Started GET "/assets/bootstrap_and_overrides.css?body=1" for 127.0.0.1 at 2014-01-20 12:02:52 -0500
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-alert.js?body=1" for 127.0.0.1 at 2014-01-20 12:02:52 -0500
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-01-20 12:02:52 -0500
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-01-20 12:02:52 -0500
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-transition.js?body=1" for 127.0.0.1 at 2014-01-20 12:02:52 -0500
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-modal.js?body=1" for 127.0.0.1 at 2014-01-20 12:02:52 -0500
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-dropdown.js?body=1" for 127.0.0.1 at 2014-01-20 12:02:52 -0500
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-scrollspy.js?body=1" for 127.0.0.1 at 2014-01-20 12:02:52 -0500
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-tab.js?body=1" for 127.0.0.1 at 2014-01-20 12:02:52 -0500
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-tooltip.js?body=1" for 127.0.0.1 at 2014-01-20 12:02:52 -0500
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-button.js?body=1" for 127.0.0.1 at 2014-01-20 12:02:52 -0500
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-popover.js?body=1" for 127.0.0.1 at 2014-01-20 12:02:52 -0500
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-collapse.js?body=1" for 127.0.0.1 at 2014-01-20 12:02:52 -0500
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-affix.js?body=1" for 127.0.0.1 at 2014-01-20 12:02:52 -0500
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-typeahead.js?body=1" for 127.0.0.1 at 2014-01-20 12:02:52 -0500
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-carousel.js?body=1" for 127.0.0.1 at 2014-01-20 12:02:52 -0500
+
+
+Started GET "/assets/twitter/bootstrap.js?body=1" for 127.0.0.1 at 2014-01-20 12:02:52 -0500
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-01-20 12:02:52 -0500
+
+
+Started GET "/assets/bootstrap.js?body=1" for 127.0.0.1 at 2014-01-20 12:02:52 -0500
+
+
+Started GET "/assets/welcome.js?body=1" for 127.0.0.1 at 2014-01-20 12:02:52 -0500
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-01-20 12:02:52 -0500
+
+
+Started GET "/" for 127.0.0.1 at 2014-01-20 12:03:49 -0500
+Processing by WelcomeController#index as HTML
+  [1m[36mArticle Load (1.2ms)[0m  [1mSELECT "articles".* FROM "articles" ORDER BY "articles"."updated_at" DESC LIMIT 5[0m
+  [1m[35mCategory Load (0.6ms)[0m  SELECT "categories".* FROM "categories" INNER JOIN "article_categories" ON "categories"."id" = "article_categories"."category_id" WHERE "article_categories"."article_id" = $1  [["article_id", 51]]
+  [1m[36mCategory Load (0.5ms)[0m  [1mSELECT "categories".* FROM "categories" INNER JOIN "article_categories" ON "categories"."id" = "article_categories"."category_id" WHERE "article_categories"."article_id" = $1[0m  [["article_id", 50]]
+  [1m[35mCategory Load (0.5ms)[0m  SELECT "categories".* FROM "categories" INNER JOIN "article_categories" ON "categories"."id" = "article_categories"."category_id" WHERE "article_categories"."article_id" = $1  [["article_id", 49]]
+  [1m[36mCategory Load (0.6ms)[0m  [1mSELECT "categories".* FROM "categories" INNER JOIN "article_categories" ON "categories"."id" = "article_categories"."category_id" WHERE "article_categories"."article_id" = $1[0m  [["article_id", 48]]
+  [1m[35mCategory Load (0.4ms)[0m  SELECT "categories".* FROM "categories" INNER JOIN "article_categories" ON "categories"."id" = "article_categories"."category_id" WHERE "article_categories"."article_id" = $1  [["article_id", 47]]
+  Rendered welcome/index.html.erb within layouts/application (14.5ms)
+  [1m[36mCategory Load (0.6ms)[0m  [1mSELECT "categories".* FROM "categories" ORDER BY "categories"."category_name" ASC[0m
+Completed 200 OK in 27ms (Views: 21.7ms | ActiveRecord: 4.4ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-01-20 12:03:49 -0500
+
+
+Started GET "/assets/welcome.css?body=1" for 127.0.0.1 at 2014-01-20 12:03:49 -0500
+
+
+Started GET "/assets/bootstrap_and_overrides.css?body=1" for 127.0.0.1 at 2014-01-20 12:03:49 -0500
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-alert.js?body=1" for 127.0.0.1 at 2014-01-20 12:03:49 -0500
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-01-20 12:03:49 -0500
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-modal.js?body=1" for 127.0.0.1 at 2014-01-20 12:03:49 -0500
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-transition.js?body=1" for 127.0.0.1 at 2014-01-20 12:03:49 -0500
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-01-20 12:03:49 -0500
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-scrollspy.js?body=1" for 127.0.0.1 at 2014-01-20 12:03:49 -0500
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-dropdown.js?body=1" for 127.0.0.1 at 2014-01-20 12:03:49 -0500
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-tab.js?body=1" for 127.0.0.1 at 2014-01-20 12:03:49 -0500
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-tooltip.js?body=1" for 127.0.0.1 at 2014-01-20 12:03:49 -0500
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-button.js?body=1" for 127.0.0.1 at 2014-01-20 12:03:49 -0500
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-popover.js?body=1" for 127.0.0.1 at 2014-01-20 12:03:49 -0500
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-collapse.js?body=1" for 127.0.0.1 at 2014-01-20 12:03:49 -0500
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-carousel.js?body=1" for 127.0.0.1 at 2014-01-20 12:03:49 -0500
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-affix.js?body=1" for 127.0.0.1 at 2014-01-20 12:03:49 -0500
+
+
+Started GET "/assets/twitter/bootstrap.js?body=1" for 127.0.0.1 at 2014-01-20 12:03:49 -0500
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-01-20 12:03:49 -0500
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-typeahead.js?body=1" for 127.0.0.1 at 2014-01-20 12:03:49 -0500
+
+
+Started GET "/assets/bootstrap.js?body=1" for 127.0.0.1 at 2014-01-20 12:03:49 -0500
+
+
+Started GET "/assets/welcome.js?body=1" for 127.0.0.1 at 2014-01-20 12:03:49 -0500
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-01-20 12:03:49 -0500
+
+
+Started GET "/articles/new" for 127.0.0.1 at 2014-01-20 12:04:00 -0500
+Processing by ArticlesController#new as HTML
+  [1m[35mCategory Load (0.7ms)[0m  SELECT "categories".* FROM "categories" ORDER BY "categories"."category_name" ASC
+  Rendered articles/_form.html.erb (286.0ms)
+  Rendered articles/new.html.erb within layouts/application (294.3ms)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "categories".* FROM "categories" ORDER BY "categories"."category_name" ASC[0m
+Completed 200 OK in 309ms (Views: 306.8ms | ActiveRecord: 0.7ms)
