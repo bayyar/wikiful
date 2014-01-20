@@ -5,7 +5,7 @@
 			<th><b>Date Created</b></th>
 			<th><b>Article Preview</b></th>
 		</tr>
-	<% @articles.each do |article| %>
+	<% @category.articles.each do |article| %>
 		<tr>
 			<td><%= link_to article.title.truncate(25), article %></td>
 			<td><%= article.created_at.strftime('%b %d, %Y') %></td>
