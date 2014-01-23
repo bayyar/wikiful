@@ -1,15 +1,13 @@
-<h1>Articles Posted Under <%= @category.category_name %></h1>
+<h1><%= @category.category_name %></h1><br>
 	<table class="table table-hover">
 		<tr>
-			<th><b>Title</b></th>
-			<th><b>Date Created</b></th>
-			<th><b>Article Preview</b></th>
+			<th>Article Title</th>
+			<th>Date Created</th>
 		</tr>
 	<% @category.articles.each do |article| %>
 		<tr>
-			<td><%= link_to article.title.truncate(25), article %></td>
-			<td><%= article.created_at.strftime('%b %d, %Y') %></td>
-			<td><%= truncate(article.content, length:100) %></td>
+			<td><%= link_to article.title.truncate(50), article %></h5></td>
+			<td><%= article.created_at.strftime('%b. %d, %Y') %></td>
 		</tr>
 	<% end %>
 	</table>
