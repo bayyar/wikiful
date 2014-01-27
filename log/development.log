@@ -9177,3 +9177,625 @@ Processing by WelcomeController#index as HTML
   Rendered welcome/index.html.erb within layouts/welcome_layout (3.8ms)
   [1m[35mUser Load (0.5ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
 Completed 200 OK in 15ms (Views: 13.1ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/categories" for 127.0.0.1 at 2014-01-26 21:52:02 -0500
+Processing by CategoriesController#index as HTML
+  [1m[36mCategory Load (0.6ms)[0m  [1mSELECT "categories".* FROM "categories" ORDER BY "categories"."category_name" ASC[0m
+  Rendered categories/index.html.erb within layouts/application (2.7ms)
+  [1m[35mUser Load (0.4ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+Completed 200 OK in 20ms (Views: 18.2ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/articles" for 127.0.0.1 at 2014-01-26 21:52:02 -0500
+Processing by ArticlesController#index as HTML
+  [1m[36mArticle Load (0.9ms)[0m  [1mSELECT "articles".* FROM "articles" ORDER BY "articles"."updated_at" DESC LIMIT 10[0m
+  [1m[35mCategory Load (0.5ms)[0m  SELECT "categories".* FROM "categories" INNER JOIN "article_categories" ON "categories"."id" = "article_categories"."category_id" WHERE "article_categories"."article_id" = $1  [["article_id", 50]]
+  [1m[36mCategory Load (0.4ms)[0m  [1mSELECT "categories".* FROM "categories" INNER JOIN "article_categories" ON "categories"."id" = "article_categories"."category_id" WHERE "article_categories"."article_id" = $1[0m  [["article_id", 49]]
+  [1m[35mCategory Load (0.4ms)[0m  SELECT "categories".* FROM "categories" INNER JOIN "article_categories" ON "categories"."id" = "article_categories"."category_id" WHERE "article_categories"."article_id" = $1  [["article_id", 48]]
+  [1m[36mCategory Load (0.5ms)[0m  [1mSELECT "categories".* FROM "categories" INNER JOIN "article_categories" ON "categories"."id" = "article_categories"."category_id" WHERE "article_categories"."article_id" = $1[0m  [["article_id", 47]]
+  [1m[35mCategory Load (0.4ms)[0m  SELECT "categories".* FROM "categories" INNER JOIN "article_categories" ON "categories"."id" = "article_categories"."category_id" WHERE "article_categories"."article_id" = $1  [["article_id", 46]]
+  [1m[36mCategory Load (0.4ms)[0m  [1mSELECT "categories".* FROM "categories" INNER JOIN "article_categories" ON "categories"."id" = "article_categories"."category_id" WHERE "article_categories"."article_id" = $1[0m  [["article_id", 45]]
+  [1m[35mCategory Load (0.5ms)[0m  SELECT "categories".* FROM "categories" INNER JOIN "article_categories" ON "categories"."id" = "article_categories"."category_id" WHERE "article_categories"."article_id" = $1  [["article_id", 44]]
+  [1m[36mCategory Load (0.5ms)[0m  [1mSELECT "categories".* FROM "categories" INNER JOIN "article_categories" ON "categories"."id" = "article_categories"."category_id" WHERE "article_categories"."article_id" = $1[0m  [["article_id", 43]]
+  [1m[35mCategory Load (0.4ms)[0m  SELECT "categories".* FROM "categories" INNER JOIN "article_categories" ON "categories"."id" = "article_categories"."category_id" WHERE "article_categories"."article_id" = $1  [["article_id", 42]]
+  [1m[36mCategory Load (0.4ms)[0m  [1mSELECT "categories".* FROM "categories" INNER JOIN "article_categories" ON "categories"."id" = "article_categories"."category_id" WHERE "article_categories"."article_id" = $1[0m  [["article_id", 41]]
+  Rendered articles/index.html.erb within layouts/application (23.9ms)
+  [1m[35mUser Load (0.5ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mCategory Load (0.6ms)[0m  [1mSELECT "categories".* FROM "categories" ORDER BY "categories"."category_name" ASC[0m
+Completed 200 OK in 41ms (Views: 33.8ms | ActiveRecord: 6.4ms)
+
+
+Started GET "/" for 127.0.0.1 at 2014-01-26 21:52:04 -0500
+Processing by WelcomeController#index as HTML
+  [1m[35mArticle Load (0.8ms)[0m  SELECT "articles".* FROM "articles" ORDER BY "articles"."updated_at" DESC LIMIT 5
+  Rendered welcome/index.html.erb within layouts/welcome_layout (3.7ms)
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+Completed 200 OK in 19ms (Views: 16.9ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/articles/50" for 127.0.0.1 at 2014-01-26 21:52:08 -0500
+Processing by ArticlesController#show as HTML
+  Parameters: {"id"=>"50"}
+  [1m[35mArticle Load (0.6ms)[0m  SELECT "articles".* FROM "articles" WHERE "articles"."id" = $1 LIMIT 1  [["id", "50"]]
+  [1m[36mCategory Load (0.5ms)[0m  [1mSELECT "categories".* FROM "categories" INNER JOIN "article_categories" ON "categories"."id" = "article_categories"."category_id" WHERE "article_categories"."article_id" = $1[0m  [["article_id", 50]]
+  Rendered articles/show.html.erb within layouts/application (2.8ms)
+  [1m[35mUser Load (0.4ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mCategory Load (0.7ms)[0m  [1mSELECT "categories".* FROM "categories" ORDER BY "categories"."category_name" ASC[0m
+Completed 200 OK in 23ms (Views: 19.6ms | ActiveRecord: 2.3ms)
+
+
+Started GET "/articles/new" for 127.0.0.1 at 2014-01-26 21:52:10 -0500
+Processing by ArticlesController#new as HTML
+  [1m[35mUser Load (0.5ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mCategory Load (0.6ms)[0m  [1mSELECT "categories".* FROM "categories" ORDER BY "categories"."category_name" ASC[0m
+  Rendered articles/_form.html.erb (5.8ms)
+  Rendered articles/new.html.erb within layouts/application (7.8ms)
+  [1m[35mCACHE (0.0ms)[0m  SELECT "categories".* FROM "categories" ORDER BY "categories"."category_name" ASC
+Completed 200 OK in 24ms (Views: 21.2ms | ActiveRecord: 1.1ms)
+
+
+Started DELETE "/logout" for 127.0.0.1 at 2014-01-26 21:52:13 -0500
+
+ActionController::RoutingError (No route matches [DELETE] "/logout"):
+  actionpack (4.0.1) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.0.1) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.0.1) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.0.1) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.0.1) lib/active_support/tagged_logging.rb:67:in `block in tagged'
+  activesupport (4.0.1) lib/active_support/tagged_logging.rb:25:in `tagged'
+  activesupport (4.0.1) lib/active_support/tagged_logging.rb:67:in `tagged'
+  railties (4.0.1) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.0.1) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.2) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.2) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.0.1) lib/active_support/cache/strategy/local_cache.rb:83:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  actionpack (4.0.1) lib/action_dispatch/middleware/static.rb:64:in `call'
+  rack (1.5.2) lib/rack/sendfile.rb:112:in `call'
+  railties (4.0.1) lib/rails/engine.rb:511:in `call'
+  railties (4.0.1) lib/rails/application.rb:97:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  rack (1.5.2) lib/rack/content_length.rb:14:in `call'
+  rack (1.5.2) lib/rack/handler/webrick.rb:60:in `service'
+  /usr/local/rvm/rubies/ruby-2.0.0-p247/lib/ruby/2.0.0/webrick/httpserver.rb:138:in `service'
+  /usr/local/rvm/rubies/ruby-2.0.0-p247/lib/ruby/2.0.0/webrick/httpserver.rb:94:in `run'
+  /usr/local/rvm/rubies/ruby-2.0.0-p247/lib/ruby/2.0.0/webrick/server.rb:295:in `block in start_thread'
+
+
+  Rendered /usr/local/rvm/gems/ruby-2.0.0-p247@wikiful/gems/actionpack-4.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.5ms)
+  Rendered /usr/local/rvm/gems/ruby-2.0.0-p247@wikiful/gems/actionpack-4.0.1/lib/action_dispatch/middleware/templates/routes/_route.html.erb (4.9ms)
+  Rendered /usr/local/rvm/gems/ruby-2.0.0-p247@wikiful/gems/actionpack-4.0.1/lib/action_dispatch/middleware/templates/routes/_table.html.erb (4.1ms)
+  Rendered /usr/local/rvm/gems/ruby-2.0.0-p247@wikiful/gems/actionpack-4.0.1/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (55.2ms)
+
+
+Started DELETE "/logout" for 127.0.0.1 at 2014-01-26 21:53:55 -0500
+
+ActionController::RoutingError (No route matches [DELETE] "/logout"):
+  actionpack (4.0.1) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.0.1) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.0.1) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.0.1) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.0.1) lib/active_support/tagged_logging.rb:67:in `block in tagged'
+  activesupport (4.0.1) lib/active_support/tagged_logging.rb:25:in `tagged'
+  activesupport (4.0.1) lib/active_support/tagged_logging.rb:67:in `tagged'
+  railties (4.0.1) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.0.1) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.2) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.2) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.0.1) lib/active_support/cache/strategy/local_cache.rb:83:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  actionpack (4.0.1) lib/action_dispatch/middleware/static.rb:64:in `call'
+  rack (1.5.2) lib/rack/sendfile.rb:112:in `call'
+  railties (4.0.1) lib/rails/engine.rb:511:in `call'
+  railties (4.0.1) lib/rails/application.rb:97:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  rack (1.5.2) lib/rack/content_length.rb:14:in `call'
+  rack (1.5.2) lib/rack/handler/webrick.rb:60:in `service'
+  /usr/local/rvm/rubies/ruby-2.0.0-p247/lib/ruby/2.0.0/webrick/httpserver.rb:138:in `service'
+  /usr/local/rvm/rubies/ruby-2.0.0-p247/lib/ruby/2.0.0/webrick/httpserver.rb:94:in `run'
+  /usr/local/rvm/rubies/ruby-2.0.0-p247/lib/ruby/2.0.0/webrick/server.rb:295:in `block in start_thread'
+
+
+  Rendered /usr/local/rvm/gems/ruby-2.0.0-p247@wikiful/gems/actionpack-4.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.2ms)
+  Rendered /usr/local/rvm/gems/ruby-2.0.0-p247@wikiful/gems/actionpack-4.0.1/lib/action_dispatch/middleware/templates/routes/_route.html.erb (43.3ms)
+  Rendered /usr/local/rvm/gems/ruby-2.0.0-p247@wikiful/gems/actionpack-4.0.1/lib/action_dispatch/middleware/templates/routes/_table.html.erb (1.3ms)
+  Rendered /usr/local/rvm/gems/ruby-2.0.0-p247@wikiful/gems/actionpack-4.0.1/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (77.5ms)
+
+
+Started GET "/articles/new" for 127.0.0.1 at 2014-01-26 21:54:02 -0500
+Processing by ArticlesController#new as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mCategory Load (0.7ms)[0m  SELECT "categories".* FROM "categories" ORDER BY "categories"."category_name" ASC
+  Rendered articles/_form.html.erb (6.4ms)
+  Rendered articles/new.html.erb within layouts/application (7.6ms)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "categories".* FROM "categories" ORDER BY "categories"."category_name" ASC[0m
+Completed 200 OK in 25ms (Views: 21.6ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-01-26 21:54:02 -0500
+
+
+Started GET "/assets/sessions.css?body=1" for 127.0.0.1 at 2014-01-26 21:54:02 -0500
+
+
+Started GET "/assets/welcome.css?body=1" for 127.0.0.1 at 2014-01-26 21:54:02 -0500
+
+
+Started GET "/assets/bootstrap_and_overrides.css?body=1" for 127.0.0.1 at 2014-01-26 21:54:02 -0500
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-01-26 21:54:02 -0500
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2014-01-26 21:54:02 -0500
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-01-26 21:54:02 -0500
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-transition.js?body=1" for 127.0.0.1 at 2014-01-26 21:54:02 -0500
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-alert.js?body=1" for 127.0.0.1 at 2014-01-26 21:54:02 -0500
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-modal.js?body=1" for 127.0.0.1 at 2014-01-26 21:54:02 -0500
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-dropdown.js?body=1" for 127.0.0.1 at 2014-01-26 21:54:02 -0500
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-scrollspy.js?body=1" for 127.0.0.1 at 2014-01-26 21:54:02 -0500
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-tab.js?body=1" for 127.0.0.1 at 2014-01-26 21:54:02 -0500
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-tooltip.js?body=1" for 127.0.0.1 at 2014-01-26 21:54:02 -0500
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-button.js?body=1" for 127.0.0.1 at 2014-01-26 21:54:02 -0500
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-popover.js?body=1" for 127.0.0.1 at 2014-01-26 21:54:02 -0500
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-collapse.js?body=1" for 127.0.0.1 at 2014-01-26 21:54:02 -0500
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-carousel.js?body=1" for 127.0.0.1 at 2014-01-26 21:54:02 -0500
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-typeahead.js?body=1" for 127.0.0.1 at 2014-01-26 21:54:02 -0500
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-affix.js?body=1" for 127.0.0.1 at 2014-01-26 21:54:02 -0500
+
+
+Started GET "/assets/twitter/bootstrap.js?body=1" for 127.0.0.1 at 2014-01-26 21:54:02 -0500
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-01-26 21:54:02 -0500
+
+
+Started GET "/assets/sessions.js?body=1" for 127.0.0.1 at 2014-01-26 21:54:02 -0500
+
+
+Started GET "/assets/bootstrap.js?body=1" for 127.0.0.1 at 2014-01-26 21:54:02 -0500
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2014-01-26 21:54:02 -0500
+
+
+Started GET "/assets/welcome.js?body=1" for 127.0.0.1 at 2014-01-26 21:54:02 -0500
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-01-26 21:54:02 -0500
+
+
+Started DELETE "/logout" for 127.0.0.1 at 2014-01-26 21:54:03 -0500
+
+ActionController::RoutingError (No route matches [DELETE] "/logout"):
+  actionpack (4.0.1) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.0.1) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.0.1) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.0.1) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.0.1) lib/active_support/tagged_logging.rb:67:in `block in tagged'
+  activesupport (4.0.1) lib/active_support/tagged_logging.rb:25:in `tagged'
+  activesupport (4.0.1) lib/active_support/tagged_logging.rb:67:in `tagged'
+  railties (4.0.1) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.0.1) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.2) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.2) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.0.1) lib/active_support/cache/strategy/local_cache.rb:83:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  actionpack (4.0.1) lib/action_dispatch/middleware/static.rb:64:in `call'
+  rack (1.5.2) lib/rack/sendfile.rb:112:in `call'
+  railties (4.0.1) lib/rails/engine.rb:511:in `call'
+  railties (4.0.1) lib/rails/application.rb:97:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  rack (1.5.2) lib/rack/content_length.rb:14:in `call'
+  rack (1.5.2) lib/rack/handler/webrick.rb:60:in `service'
+  /usr/local/rvm/rubies/ruby-2.0.0-p247/lib/ruby/2.0.0/webrick/httpserver.rb:138:in `service'
+  /usr/local/rvm/rubies/ruby-2.0.0-p247/lib/ruby/2.0.0/webrick/httpserver.rb:94:in `run'
+  /usr/local/rvm/rubies/ruby-2.0.0-p247/lib/ruby/2.0.0/webrick/server.rb:295:in `block in start_thread'
+
+
+  Rendered /usr/local/rvm/gems/ruby-2.0.0-p247@wikiful/gems/actionpack-4.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.1ms)
+  Rendered /usr/local/rvm/gems/ruby-2.0.0-p247@wikiful/gems/actionpack-4.0.1/lib/action_dispatch/middleware/templates/routes/_route.html.erb (4.7ms)
+  Rendered /usr/local/rvm/gems/ruby-2.0.0-p247@wikiful/gems/actionpack-4.0.1/lib/action_dispatch/middleware/templates/routes/_table.html.erb (1.4ms)
+  Rendered /usr/local/rvm/gems/ruby-2.0.0-p247@wikiful/gems/actionpack-4.0.1/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (38.9ms)
+
+
+Started DELETE "/logout" for 127.0.0.1 at 2014-01-26 21:54:36 -0500
+
+ActionController::RoutingError (No route matches [DELETE] "/logout"):
+  actionpack (4.0.1) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.0.1) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.0.1) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.0.1) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.0.1) lib/active_support/tagged_logging.rb:67:in `block in tagged'
+  activesupport (4.0.1) lib/active_support/tagged_logging.rb:25:in `tagged'
+  activesupport (4.0.1) lib/active_support/tagged_logging.rb:67:in `tagged'
+  railties (4.0.1) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.0.1) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.2) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.2) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.0.1) lib/active_support/cache/strategy/local_cache.rb:83:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  actionpack (4.0.1) lib/action_dispatch/middleware/static.rb:64:in `call'
+  rack (1.5.2) lib/rack/sendfile.rb:112:in `call'
+  railties (4.0.1) lib/rails/engine.rb:511:in `call'
+  railties (4.0.1) lib/rails/application.rb:97:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  rack (1.5.2) lib/rack/content_length.rb:14:in `call'
+  rack (1.5.2) lib/rack/handler/webrick.rb:60:in `service'
+  /usr/local/rvm/rubies/ruby-2.0.0-p247/lib/ruby/2.0.0/webrick/httpserver.rb:138:in `service'
+  /usr/local/rvm/rubies/ruby-2.0.0-p247/lib/ruby/2.0.0/webrick/httpserver.rb:94:in `run'
+  /usr/local/rvm/rubies/ruby-2.0.0-p247/lib/ruby/2.0.0/webrick/server.rb:295:in `block in start_thread'
+
+
+  Rendered /usr/local/rvm/gems/ruby-2.0.0-p247@wikiful/gems/actionpack-4.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.3ms)
+  Rendered /usr/local/rvm/gems/ruby-2.0.0-p247@wikiful/gems/actionpack-4.0.1/lib/action_dispatch/middleware/templates/routes/_route.html.erb (4.6ms)
+  Rendered /usr/local/rvm/gems/ruby-2.0.0-p247@wikiful/gems/actionpack-4.0.1/lib/action_dispatch/middleware/templates/routes/_table.html.erb (1.2ms)
+  Rendered /usr/local/rvm/gems/ruby-2.0.0-p247@wikiful/gems/actionpack-4.0.1/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (39.8ms)
+
+
+Started GET "/articles/50" for 127.0.0.1 at 2014-01-26 21:54:39 -0500
+Processing by ArticlesController#show as HTML
+  Parameters: {"id"=>"50"}
+  [1m[35mArticle Load (2.1ms)[0m  SELECT "articles".* FROM "articles" WHERE "articles"."id" = $1 LIMIT 1  [["id", "50"]]
+  [1m[36mCategory Load (0.9ms)[0m  [1mSELECT "categories".* FROM "categories" INNER JOIN "article_categories" ON "categories"."id" = "article_categories"."category_id" WHERE "article_categories"."article_id" = $1[0m  [["article_id", 50]]
+  Rendered articles/show.html.erb within layouts/application (4.8ms)
+  [1m[35mUser Load (0.5ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mCategory Load (0.5ms)[0m  [1mSELECT "categories".* FROM "categories" ORDER BY "categories"."category_name" ASC[0m
+Completed 200 OK in 27ms (Views: 20.5ms | ActiveRecord: 4.0ms)
+
+
+Started GET "/articles" for 127.0.0.1 at 2014-01-26 21:54:40 -0500
+Processing by ArticlesController#index as HTML
+  [1m[35mArticle Load (0.9ms)[0m  SELECT "articles".* FROM "articles" ORDER BY "articles"."updated_at" DESC LIMIT 10
+  [1m[36mCategory Load (0.4ms)[0m  [1mSELECT "categories".* FROM "categories" INNER JOIN "article_categories" ON "categories"."id" = "article_categories"."category_id" WHERE "article_categories"."article_id" = $1[0m  [["article_id", 50]]
+  [1m[35mCategory Load (0.4ms)[0m  SELECT "categories".* FROM "categories" INNER JOIN "article_categories" ON "categories"."id" = "article_categories"."category_id" WHERE "article_categories"."article_id" = $1  [["article_id", 49]]
+  [1m[36mCategory Load (0.5ms)[0m  [1mSELECT "categories".* FROM "categories" INNER JOIN "article_categories" ON "categories"."id" = "article_categories"."category_id" WHERE "article_categories"."article_id" = $1[0m  [["article_id", 48]]
+  [1m[35mCategory Load (0.4ms)[0m  SELECT "categories".* FROM "categories" INNER JOIN "article_categories" ON "categories"."id" = "article_categories"."category_id" WHERE "article_categories"."article_id" = $1  [["article_id", 47]]
+  [1m[36mCategory Load (0.4ms)[0m  [1mSELECT "categories".* FROM "categories" INNER JOIN "article_categories" ON "categories"."id" = "article_categories"."category_id" WHERE "article_categories"."article_id" = $1[0m  [["article_id", 46]]
+  [1m[35mCategory Load (0.4ms)[0m  SELECT "categories".* FROM "categories" INNER JOIN "article_categories" ON "categories"."id" = "article_categories"."category_id" WHERE "article_categories"."article_id" = $1  [["article_id", 45]]
+  [1m[36mCategory Load (0.5ms)[0m  [1mSELECT "categories".* FROM "categories" INNER JOIN "article_categories" ON "categories"."id" = "article_categories"."category_id" WHERE "article_categories"."article_id" = $1[0m  [["article_id", 44]]
+  [1m[35mCategory Load (0.5ms)[0m  SELECT "categories".* FROM "categories" INNER JOIN "article_categories" ON "categories"."id" = "article_categories"."category_id" WHERE "article_categories"."article_id" = $1  [["article_id", 43]]
+  [1m[36mCategory Load (0.5ms)[0m  [1mSELECT "categories".* FROM "categories" INNER JOIN "article_categories" ON "categories"."id" = "article_categories"."category_id" WHERE "article_categories"."article_id" = $1[0m  [["article_id", 42]]
+  [1m[35mCategory Load (0.5ms)[0m  SELECT "categories".* FROM "categories" INNER JOIN "article_categories" ON "categories"."id" = "article_categories"."category_id" WHERE "article_categories"."article_id" = $1  [["article_id", 41]]
+  Rendered articles/index.html.erb within layouts/application (48.2ms)
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mCategory Load (0.6ms)[0m  SELECT "categories".* FROM "categories" ORDER BY "categories"."category_name" ASC
+Completed 200 OK in 105ms (Views: 97.1ms | ActiveRecord: 6.6ms)
+
+
+Started POST "/logout" for 127.0.0.1 at 2014-01-26 21:54:41 -0500
+
+ActionController::RoutingError (No route matches [POST] "/logout"):
+  actionpack (4.0.1) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.0.1) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.0.1) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.0.1) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.0.1) lib/active_support/tagged_logging.rb:67:in `block in tagged'
+  activesupport (4.0.1) lib/active_support/tagged_logging.rb:25:in `tagged'
+  activesupport (4.0.1) lib/active_support/tagged_logging.rb:67:in `tagged'
+  railties (4.0.1) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.0.1) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.2) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.2) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.0.1) lib/active_support/cache/strategy/local_cache.rb:83:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  actionpack (4.0.1) lib/action_dispatch/middleware/static.rb:64:in `call'
+  rack (1.5.2) lib/rack/sendfile.rb:112:in `call'
+  railties (4.0.1) lib/rails/engine.rb:511:in `call'
+  railties (4.0.1) lib/rails/application.rb:97:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  rack (1.5.2) lib/rack/content_length.rb:14:in `call'
+  rack (1.5.2) lib/rack/handler/webrick.rb:60:in `service'
+  /usr/local/rvm/rubies/ruby-2.0.0-p247/lib/ruby/2.0.0/webrick/httpserver.rb:138:in `service'
+  /usr/local/rvm/rubies/ruby-2.0.0-p247/lib/ruby/2.0.0/webrick/httpserver.rb:94:in `run'
+  /usr/local/rvm/rubies/ruby-2.0.0-p247/lib/ruby/2.0.0/webrick/server.rb:295:in `block in start_thread'
+
+
+  Rendered /usr/local/rvm/gems/ruby-2.0.0-p247@wikiful/gems/actionpack-4.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.1ms)
+  Rendered /usr/local/rvm/gems/ruby-2.0.0-p247@wikiful/gems/actionpack-4.0.1/lib/action_dispatch/middleware/templates/routes/_route.html.erb (4.0ms)
+  Rendered /usr/local/rvm/gems/ruby-2.0.0-p247@wikiful/gems/actionpack-4.0.1/lib/action_dispatch/middleware/templates/routes/_table.html.erb (1.2ms)
+  Rendered /usr/local/rvm/gems/ruby-2.0.0-p247@wikiful/gems/actionpack-4.0.1/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (38.7ms)
+
+
+Started POST "/logout" for 127.0.0.1 at 2014-01-26 21:55:50 -0500
+
+ActionController::RoutingError (No route matches [POST] "/logout"):
+  actionpack (4.0.1) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.0.1) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.0.1) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.0.1) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.0.1) lib/active_support/tagged_logging.rb:67:in `block in tagged'
+  activesupport (4.0.1) lib/active_support/tagged_logging.rb:25:in `tagged'
+  activesupport (4.0.1) lib/active_support/tagged_logging.rb:67:in `tagged'
+  railties (4.0.1) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.0.1) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.2) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.2) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.0.1) lib/active_support/cache/strategy/local_cache.rb:83:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  actionpack (4.0.1) lib/action_dispatch/middleware/static.rb:64:in `call'
+  rack (1.5.2) lib/rack/sendfile.rb:112:in `call'
+  railties (4.0.1) lib/rails/engine.rb:511:in `call'
+  railties (4.0.1) lib/rails/application.rb:97:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  rack (1.5.2) lib/rack/content_length.rb:14:in `call'
+  rack (1.5.2) lib/rack/handler/webrick.rb:60:in `service'
+  /usr/local/rvm/rubies/ruby-2.0.0-p247/lib/ruby/2.0.0/webrick/httpserver.rb:138:in `service'
+  /usr/local/rvm/rubies/ruby-2.0.0-p247/lib/ruby/2.0.0/webrick/httpserver.rb:94:in `run'
+  /usr/local/rvm/rubies/ruby-2.0.0-p247/lib/ruby/2.0.0/webrick/server.rb:295:in `block in start_thread'
+
+
+  Rendered /usr/local/rvm/gems/ruby-2.0.0-p247@wikiful/gems/actionpack-4.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.2ms)
+  Rendered /usr/local/rvm/gems/ruby-2.0.0-p247@wikiful/gems/actionpack-4.0.1/lib/action_dispatch/middleware/templates/routes/_route.html.erb (4.7ms)
+  Rendered /usr/local/rvm/gems/ruby-2.0.0-p247@wikiful/gems/actionpack-4.0.1/lib/action_dispatch/middleware/templates/routes/_table.html.erb (2.0ms)
+  Rendered /usr/local/rvm/gems/ruby-2.0.0-p247@wikiful/gems/actionpack-4.0.1/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (37.3ms)
+
+
+Started GET "/articles/50" for 127.0.0.1 at 2014-01-26 21:55:54 -0500
+Processing by ArticlesController#show as HTML
+  Parameters: {"id"=>"50"}
+  [1m[36mArticle Load (1.0ms)[0m  [1mSELECT "articles".* FROM "articles" WHERE "articles"."id" = $1 LIMIT 1[0m  [["id", "50"]]
+  [1m[35mCategory Load (1.1ms)[0m  SELECT "categories".* FROM "categories" INNER JOIN "article_categories" ON "categories"."id" = "article_categories"."category_id" WHERE "article_categories"."article_id" = $1  [["article_id", 50]]
+  Rendered articles/show.html.erb within layouts/application (5.2ms)
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mCategory Load (0.5ms)[0m  SELECT "categories".* FROM "categories" ORDER BY "categories"."category_name" ASC
+Completed 200 OK in 28ms (Views: 22.9ms | ActiveRecord: 3.1ms)
+
+
+Started GET "/" for 127.0.0.1 at 2014-01-26 21:55:55 -0500
+Processing by WelcomeController#index as HTML
+  [1m[36mArticle Load (0.8ms)[0m  [1mSELECT "articles".* FROM "articles" ORDER BY "articles"."updated_at" DESC LIMIT 5[0m
+  Rendered welcome/index.html.erb within layouts/welcome_layout (3.6ms)
+  [1m[35mUser Load (0.5ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+Completed 200 OK in 20ms (Views: 17.8ms | ActiveRecord: 1.3ms)
+
+
+Started POST "/logout" for 127.0.0.1 at 2014-01-26 21:55:56 -0500
+
+ActionController::RoutingError (No route matches [POST] "/logout"):
+  actionpack (4.0.1) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.0.1) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.0.1) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.0.1) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.0.1) lib/active_support/tagged_logging.rb:67:in `block in tagged'
+  activesupport (4.0.1) lib/active_support/tagged_logging.rb:25:in `tagged'
+  activesupport (4.0.1) lib/active_support/tagged_logging.rb:67:in `tagged'
+  railties (4.0.1) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.0.1) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.2) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.2) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.0.1) lib/active_support/cache/strategy/local_cache.rb:83:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  actionpack (4.0.1) lib/action_dispatch/middleware/static.rb:64:in `call'
+  rack (1.5.2) lib/rack/sendfile.rb:112:in `call'
+  railties (4.0.1) lib/rails/engine.rb:511:in `call'
+  railties (4.0.1) lib/rails/application.rb:97:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  rack (1.5.2) lib/rack/content_length.rb:14:in `call'
+  rack (1.5.2) lib/rack/handler/webrick.rb:60:in `service'
+  /usr/local/rvm/rubies/ruby-2.0.0-p247/lib/ruby/2.0.0/webrick/httpserver.rb:138:in `service'
+  /usr/local/rvm/rubies/ruby-2.0.0-p247/lib/ruby/2.0.0/webrick/httpserver.rb:94:in `run'
+  /usr/local/rvm/rubies/ruby-2.0.0-p247/lib/ruby/2.0.0/webrick/server.rb:295:in `block in start_thread'
+
+
+  Rendered /usr/local/rvm/gems/ruby-2.0.0-p247@wikiful/gems/actionpack-4.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.8ms)
+  Rendered /usr/local/rvm/gems/ruby-2.0.0-p247@wikiful/gems/actionpack-4.0.1/lib/action_dispatch/middleware/templates/routes/_route.html.erb (4.3ms)
+  Rendered /usr/local/rvm/gems/ruby-2.0.0-p247@wikiful/gems/actionpack-4.0.1/lib/action_dispatch/middleware/templates/routes/_table.html.erb (1.3ms)
+  Rendered /usr/local/rvm/gems/ruby-2.0.0-p247@wikiful/gems/actionpack-4.0.1/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (42.9ms)
+
+
+Started POST "/logout" for 127.0.0.1 at 2014-01-26 21:58:34 -0500
+
+ActionController::RoutingError (No route matches [POST] "/logout"):
+  actionpack (4.0.1) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.0.1) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.0.1) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.0.1) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.0.1) lib/active_support/tagged_logging.rb:67:in `block in tagged'
+  activesupport (4.0.1) lib/active_support/tagged_logging.rb:25:in `tagged'
+  activesupport (4.0.1) lib/active_support/tagged_logging.rb:67:in `tagged'
+  railties (4.0.1) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.0.1) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.2) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.2) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.0.1) lib/active_support/cache/strategy/local_cache.rb:83:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  actionpack (4.0.1) lib/action_dispatch/middleware/static.rb:64:in `call'
+  rack (1.5.2) lib/rack/sendfile.rb:112:in `call'
+  railties (4.0.1) lib/rails/engine.rb:511:in `call'
+  railties (4.0.1) lib/rails/application.rb:97:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  rack (1.5.2) lib/rack/content_length.rb:14:in `call'
+  rack (1.5.2) lib/rack/handler/webrick.rb:60:in `service'
+  /usr/local/rvm/rubies/ruby-2.0.0-p247/lib/ruby/2.0.0/webrick/httpserver.rb:138:in `service'
+  /usr/local/rvm/rubies/ruby-2.0.0-p247/lib/ruby/2.0.0/webrick/httpserver.rb:94:in `run'
+  /usr/local/rvm/rubies/ruby-2.0.0-p247/lib/ruby/2.0.0/webrick/server.rb:295:in `block in start_thread'
+
+
+  Rendered /usr/local/rvm/gems/ruby-2.0.0-p247@wikiful/gems/actionpack-4.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.1ms)
+  Rendered /usr/local/rvm/gems/ruby-2.0.0-p247@wikiful/gems/actionpack-4.0.1/lib/action_dispatch/middleware/templates/routes/_route.html.erb (3.8ms)
+  Rendered /usr/local/rvm/gems/ruby-2.0.0-p247@wikiful/gems/actionpack-4.0.1/lib/action_dispatch/middleware/templates/routes/_table.html.erb (1.3ms)
+  Rendered /usr/local/rvm/gems/ruby-2.0.0-p247@wikiful/gems/actionpack-4.0.1/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (36.2ms)
+
+
+Started GET "/articles/50" for 127.0.0.1 at 2014-01-26 21:58:36 -0500
+Processing by ArticlesController#show as HTML
+  Parameters: {"id"=>"50"}
+  [1m[36mArticle Load (0.9ms)[0m  [1mSELECT "articles".* FROM "articles" WHERE "articles"."id" = $1 LIMIT 1[0m  [["id", "50"]]
+  [1m[35mCategory Load (0.5ms)[0m  SELECT "categories".* FROM "categories" INNER JOIN "article_categories" ON "categories"."id" = "article_categories"."category_id" WHERE "article_categories"."article_id" = $1  [["article_id", 50]]
+  Rendered articles/show.html.erb within layouts/application (3.6ms)
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mCategory Load (0.6ms)[0m  SELECT "categories".* FROM "categories" ORDER BY "categories"."category_name" ASC
+Completed 200 OK in 32ms (Views: 26.9ms | ActiveRecord: 2.5ms)
+
+
+Started POST "/logout" for 127.0.0.1 at 2014-01-26 21:58:38 -0500
+
+ActionController::RoutingError (No route matches [POST] "/logout"):
+  actionpack (4.0.1) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.0.1) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.0.1) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.0.1) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.0.1) lib/active_support/tagged_logging.rb:67:in `block in tagged'
+  activesupport (4.0.1) lib/active_support/tagged_logging.rb:25:in `tagged'
+  activesupport (4.0.1) lib/active_support/tagged_logging.rb:67:in `tagged'
+  railties (4.0.1) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.0.1) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.2) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.2) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.0.1) lib/active_support/cache/strategy/local_cache.rb:83:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  actionpack (4.0.1) lib/action_dispatch/middleware/static.rb:64:in `call'
+  rack (1.5.2) lib/rack/sendfile.rb:112:in `call'
+  railties (4.0.1) lib/rails/engine.rb:511:in `call'
+  railties (4.0.1) lib/rails/application.rb:97:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  rack (1.5.2) lib/rack/content_length.rb:14:in `call'
+  rack (1.5.2) lib/rack/handler/webrick.rb:60:in `service'
+  /usr/local/rvm/rubies/ruby-2.0.0-p247/lib/ruby/2.0.0/webrick/httpserver.rb:138:in `service'
+  /usr/local/rvm/rubies/ruby-2.0.0-p247/lib/ruby/2.0.0/webrick/httpserver.rb:94:in `run'
+  /usr/local/rvm/rubies/ruby-2.0.0-p247/lib/ruby/2.0.0/webrick/server.rb:295:in `block in start_thread'
+
+
+  Rendered /usr/local/rvm/gems/ruby-2.0.0-p247@wikiful/gems/actionpack-4.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.3ms)
+  Rendered /usr/local/rvm/gems/ruby-2.0.0-p247@wikiful/gems/actionpack-4.0.1/lib/action_dispatch/middleware/templates/routes/_route.html.erb (4.1ms)
+  Rendered /usr/local/rvm/gems/ruby-2.0.0-p247@wikiful/gems/actionpack-4.0.1/lib/action_dispatch/middleware/templates/routes/_table.html.erb (1.2ms)
+  Rendered /usr/local/rvm/gems/ruby-2.0.0-p247@wikiful/gems/actionpack-4.0.1/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (35.4ms)
+
+
+Started GET "/articles" for 127.0.0.1 at 2014-01-26 22:03:44 -0500
+Processing by ArticlesController#index as HTML
+  [1m[36mArticle Load (1.8ms)[0m  [1mSELECT "articles".* FROM "articles" ORDER BY "articles"."updated_at" DESC LIMIT 10[0m
+  [1m[35mCategory Load (0.5ms)[0m  SELECT "categories".* FROM "categories" INNER JOIN "article_categories" ON "categories"."id" = "article_categories"."category_id" WHERE "article_categories"."article_id" = $1  [["article_id", 50]]
+  [1m[36mCategory Load (0.4ms)[0m  [1mSELECT "categories".* FROM "categories" INNER JOIN "article_categories" ON "categories"."id" = "article_categories"."category_id" WHERE "article_categories"."article_id" = $1[0m  [["article_id", 49]]
+  [1m[35mCategory Load (0.4ms)[0m  SELECT "categories".* FROM "categories" INNER JOIN "article_categories" ON "categories"."id" = "article_categories"."category_id" WHERE "article_categories"."article_id" = $1  [["article_id", 48]]
+  [1m[36mCategory Load (0.4ms)[0m  [1mSELECT "categories".* FROM "categories" INNER JOIN "article_categories" ON "categories"."id" = "article_categories"."category_id" WHERE "article_categories"."article_id" = $1[0m  [["article_id", 47]]
+  [1m[35mCategory Load (0.6ms)[0m  SELECT "categories".* FROM "categories" INNER JOIN "article_categories" ON "categories"."id" = "article_categories"."category_id" WHERE "article_categories"."article_id" = $1  [["article_id", 46]]
+  [1m[36mCategory Load (0.4ms)[0m  [1mSELECT "categories".* FROM "categories" INNER JOIN "article_categories" ON "categories"."id" = "article_categories"."category_id" WHERE "article_categories"."article_id" = $1[0m  [["article_id", 45]]
+  [1m[35mCategory Load (0.4ms)[0m  SELECT "categories".* FROM "categories" INNER JOIN "article_categories" ON "categories"."id" = "article_categories"."category_id" WHERE "article_categories"."article_id" = $1  [["article_id", 44]]
+  [1m[36mCategory Load (0.4ms)[0m  [1mSELECT "categories".* FROM "categories" INNER JOIN "article_categories" ON "categories"."id" = "article_categories"."category_id" WHERE "article_categories"."article_id" = $1[0m  [["article_id", 43]]
+  [1m[35mCategory Load (0.4ms)[0m  SELECT "categories".* FROM "categories" INNER JOIN "article_categories" ON "categories"."id" = "article_categories"."category_id" WHERE "article_categories"."article_id" = $1  [["article_id", 42]]
+  [1m[36mCategory Load (0.4ms)[0m  [1mSELECT "categories".* FROM "categories" INNER JOIN "article_categories" ON "categories"."id" = "article_categories"."category_id" WHERE "article_categories"."article_id" = $1[0m  [["article_id", 41]]
+  Rendered articles/index.html.erb within layouts/application (26.4ms)
+  [1m[35mUser Load (0.4ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mCategory Load (0.6ms)[0m  [1mSELECT "categories".* FROM "categories" ORDER BY "categories"."category_name" ASC[0m
+Completed 200 OK in 42ms (Views: 33.6ms | ActiveRecord: 7.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2014-01-26 22:03:44 -0500
+Processing by WelcomeController#index as HTML
+  [1m[35mArticle Load (0.8ms)[0m  SELECT "articles".* FROM "articles" ORDER BY "articles"."updated_at" DESC LIMIT 5
+  Rendered welcome/index.html.erb within layouts/welcome_layout (3.8ms)
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+Completed 200 OK in 17ms (Views: 14.9ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/articles/50" for 127.0.0.1 at 2014-01-26 22:03:48 -0500
+Processing by ArticlesController#show as HTML
+  Parameters: {"id"=>"50"}
+  [1m[35mArticle Load (0.5ms)[0m  SELECT "articles".* FROM "articles" WHERE "articles"."id" = $1 LIMIT 1  [["id", "50"]]
+  [1m[36mCategory Load (0.5ms)[0m  [1mSELECT "categories".* FROM "categories" INNER JOIN "article_categories" ON "categories"."id" = "article_categories"."category_id" WHERE "article_categories"."article_id" = $1[0m  [["article_id", 50]]
+  Rendered articles/show.html.erb within layouts/application (2.8ms)
+  [1m[35mUser Load (0.4ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mCategory Load (0.5ms)[0m  [1mSELECT "categories".* FROM "categories" ORDER BY "categories"."category_name" ASC[0m
+Completed 200 OK in 19ms (Views: 15.4ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/categories/8" for 127.0.0.1 at 2014-01-26 22:03:50 -0500
+Processing by CategoriesController#show as HTML
+  Parameters: {"id"=>"8"}
+  [1m[35mCategory Load (0.7ms)[0m  SELECT "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT 1  [["id", "8"]]
+  [1m[36mArticle Load (0.9ms)[0m  [1mSELECT "articles".* FROM "articles" INNER JOIN "article_categories" ON "articles"."id" = "article_categories"."article_id" WHERE "article_categories"."category_id" = $1[0m  [["category_id", 8]]
+  Rendered categories/show.html.erb within layouts/application (4.1ms)
+  [1m[35mUser Load (0.5ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mCategory Load (0.5ms)[0m  [1mSELECT "categories".* FROM "categories" ORDER BY "categories"."category_name" ASC[0m
+Completed 200 OK in 20ms (Views: 15.9ms | ActiveRecord: 2.7ms)
+
+
+Started GET "/categories/1" for 127.0.0.1 at 2014-01-26 22:03:51 -0500
+Processing by CategoriesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mCategory Load (0.7ms)[0m  SELECT "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT 1  [["id", "1"]]
+  [1m[36mArticle Load (0.9ms)[0m  [1mSELECT "articles".* FROM "articles" INNER JOIN "article_categories" ON "articles"."id" = "article_categories"."article_id" WHERE "article_categories"."category_id" = $1[0m  [["category_id", 1]]
+  Rendered categories/show.html.erb within layouts/application (3.9ms)
+  [1m[35mUser Load (0.4ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mCategory Load (0.5ms)[0m  [1mSELECT "categories".* FROM "categories" ORDER BY "categories"."category_name" ASC[0m
+Completed 200 OK in 19ms (Views: 15.2ms | ActiveRecord: 2.6ms)
+
+
+Started GET "/categories/3" for 127.0.0.1 at 2014-01-26 22:03:52 -0500
+Processing by CategoriesController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[35mCategory Load (0.6ms)[0m  SELECT "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT 1  [["id", "3"]]
+  [1m[36mArticle Load (0.9ms)[0m  [1mSELECT "articles".* FROM "articles" INNER JOIN "article_categories" ON "articles"."id" = "article_categories"."article_id" WHERE "article_categories"."category_id" = $1[0m  [["category_id", 3]]
+  Rendered categories/show.html.erb within layouts/application (4.0ms)
+  [1m[35mUser Load (0.5ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mCategory Load (0.5ms)[0m  [1mSELECT "categories".* FROM "categories" ORDER BY "categories"."category_name" ASC[0m
+Completed 200 OK in 19ms (Views: 15.3ms | ActiveRecord: 2.4ms)
+
+
+Started GET "/categories" for 127.0.0.1 at 2014-01-26 22:03:56 -0500
+Processing by CategoriesController#index as HTML
+  [1m[35mCategory Load (1.1ms)[0m  SELECT "categories".* FROM "categories" ORDER BY "categories"."category_name" ASC
+  Rendered categories/index.html.erb within layouts/application (4.5ms)
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+Completed 200 OK in 18ms (Views: 16.2ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/categories/6" for 127.0.0.1 at 2014-01-26 22:03:57 -0500
+Processing by CategoriesController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[35mCategory Load (0.6ms)[0m  SELECT "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT 1  [["id", "6"]]
+  [1m[36mArticle Load (1.0ms)[0m  [1mSELECT "articles".* FROM "articles" INNER JOIN "article_categories" ON "articles"."id" = "article_categories"."article_id" WHERE "article_categories"."category_id" = $1[0m  [["category_id", 6]]
+  Rendered categories/show.html.erb within layouts/application (4.4ms)
+  [1m[35mUser Load (0.5ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mCategory Load (0.6ms)[0m  [1mSELECT "categories".* FROM "categories" ORDER BY "categories"."category_name" ASC[0m
+Completed 200 OK in 20ms (Views: 15.9ms | ActiveRecord: 2.6ms)
+
+
+Started GET "/articles/30" for 127.0.0.1 at 2014-01-26 22:03:59 -0500
+Processing by ArticlesController#show as HTML
+  Parameters: {"id"=>"30"}
+  [1m[35mArticle Load (0.5ms)[0m  SELECT "articles".* FROM "articles" WHERE "articles"."id" = $1 LIMIT 1  [["id", "30"]]
+  [1m[36mCategory Load (0.5ms)[0m  [1mSELECT "categories".* FROM "categories" INNER JOIN "article_categories" ON "categories"."id" = "article_categories"."category_id" WHERE "article_categories"."article_id" = $1[0m  [["article_id", 30]]
+  Rendered articles/show.html.erb within layouts/application (2.5ms)
+  [1m[35mUser Load (0.5ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mCategory Load (0.5ms)[0m  [1mSELECT "categories".* FROM "categories" ORDER BY "categories"."category_name" ASC[0m
+Completed 200 OK in 56ms (Views: 52.4ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2014-01-26 22:04:02 -0500
+Processing by WelcomeController#index as HTML
+  [1m[35mArticle Load (0.8ms)[0m  SELECT "articles".* FROM "articles" ORDER BY "articles"."updated_at" DESC LIMIT 5
+  Rendered welcome/index.html.erb within layouts/welcome_layout (4.1ms)
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+Completed 200 OK in 16ms (Views: 14.1ms | ActiveRecord: 1.3ms)

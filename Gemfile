@@ -1,5 +1,7 @@
 source 'https://rubygems.org'
 
+#ruby-gemset=wikiful
+
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.0.1'
 
@@ -43,6 +45,9 @@ gem 'therubyracer'
 # Use ActiveModel has_secure_password
 gem 'bcrypt-ruby', '~> 3.1.2'
 
+group :production do
+	gem 'rails_12factor'
+end
 # Use unicorn as the app server
 # gem 'unicorn'
 
