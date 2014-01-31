@@ -1,18 +1,13 @@
-<h1>The 10 Most Recent Articles on Wikiful</h1>
+<h1>The Most Recent Articles on Wikiful</h1><br>
 <table class="table table-hover">
-<tr>
-<% @articles.each do |article| %>
-		<td><h4>
-			<%= link_to article.title.truncate(60), article %>
-			<small>(<%= article.created_at.strftime('%b. %d, %Y') %>)</small>
-		</h4></td>
-</tr>
-<tr>
-		<td>
-			<%= truncate(article.content, length:200) %> ... <%= link_to "Read More", article %>  Filed under: <% article.categories.each do |category| %>
-					<%= link_to category.category_name, category %>&nbsp;
-					<% end %>
-		</td>
-</tr>
-<% end %>
+	<tr>
+		<th>Article Title</th>
+		<th>Date Created</th>
+	</tr>
+	<% @articles.each do |article| %>
+	<tr>
+		<td><%= link_to article.title.truncate(50), article %></h5></td>
+		<td><%= article.created_at.strftime('%b. %d, %Y') %></td>
+	</tr>
+	<% end %>
 </table>
